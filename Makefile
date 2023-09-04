@@ -13,15 +13,22 @@ RM = rm -f
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	make -C ${LIBFTDIR}
-	${LIBC} ${NAME} ${LIBFTDIR}/${LIBFTNAME} ${OBJS}
+	make all -C ${LIBFTDIR}
+	cp ${LIBFTDIR}/${LIBFTNAME} .
+	mv ${LIBFTNAME} $(NAME)
+	${LIBC} ${NAME} ${OBJS}
 
 clean:
+	make clean -C ${LIBFTDIR}
 	${RM} ${OBJS}
 
 fclean: clean
+	make fclean -C ${LIBFTDIR}
 	${RM} ${NAME}
 
 re: fclean all
 
 .PHONY: all clean fclean re
+
+# make all -C ${LIBFTDIR}
+# cp ${LIBFTDIR}/${LIBFTNAME} ${NAME}

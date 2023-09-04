@@ -6,21 +6,12 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:24:18 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/04 14:49:38 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/04 20:51:38 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-size_t ft_strlen(char *str)
-{
-	size_t	index;
-
-	index = 0;
-	while (str[index])
-		index++;
-	return (index);
-}
+#include "libft.h"
 
 int	ft_printchar(int c)
 {
