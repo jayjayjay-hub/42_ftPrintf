@@ -6,7 +6,7 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:24:18 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/04 20:51:38 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/05 16:35:33 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,11 @@ int	ft_printstr(char *str)
 
 int	ft_printnbr(int nbr)
 {
-	size_t	len_nbr;
+	int		len_nbr;
 	char	*num;
 
 	num = ft_itoa(nbr);
 	len_nbr = ft_printstr(num);
+	free(num);
 	return (len_nbr);
 }

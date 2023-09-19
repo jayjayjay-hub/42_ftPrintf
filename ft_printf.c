@@ -6,7 +6,7 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 12:54:28 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/04 21:21:41 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/05 17:15:48 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,14 @@ int	format_check(va_list list, const char str_index)
 		length += ft_printchar(va_arg(list, int));
 	else if (str_index == 's')
 		length += ft_printstr(va_arg(list, char *));
-	else if (str_index == 'd')
+	else if (str_index == 'd' || str_index == 'i')
 		length += ft_printnbr(va_arg(list, int));
-	// else if (str_index == 'p')
-	// 	length += ft_print_ptr(va_arg(list, void));
+	else if (str_index == 'p')
+		length += ft_print_ptr(va_arg(list, unsigned long long));
+	else if (str_index == 'u')
+		length += ft_print_uint(va_arg(list, unsigned int));
+	else if (str_index == 'x' || str_index == 'X')
+		length += ft_print_hex(str_index, va_arg(list, unsigned int));
 	else if (str_index == '%')
 		length += ft_printchar('%');
 	return ((int)length);
@@ -52,20 +56,25 @@ int	ft_printf(const char *str, ...)
 	return ((int)length);
 }
 
-#include <stdio.h>
+// int	main(void)
+// {
+// 	char	a = 'a';
+// 	char	b = 'b';
+// 	char	*str = "cde";
+// 	unsigned int	u_nbr = 2077918407;
+// 	size_t	printf_nbr;
+// 	size_t	ft_printf_nbr;
 
-int	main(void)
-{
-	char	a = 'a';
-	char	b = 'b';
-	char	*str = "cde";
-	size_t	printf_nbr;
-	size_t	ft_printf_nbr;
+// 	ft_printf_nbr = ft_printf("%c %c %s %% %d\nptr = %p\n", a, b, str, 42, str);
+// 	printf_nbr = printf("%c %c %s %% %d\nptr = %p\n", a, b, str, 42, str);
 
-	ft_printf_nbr = ft_printf("%c %c %s %% %d\n", a, b, str, 42);
-	printf_nbr = printf("%c %c %s %% %d\n%p", a, b, str, 42, str);
+// 	printf("unsigned int %u\n", u_nbr);
+// 	ft_printf("ft unsint %u\n", u_nbr);
 
-	printf("%zu\n", ft_printf_nbr);
-	// printf("%zu\n", printf_nbr);
-	return (0);
-}
+// 	printf("%zu\n", ft_printf_nbr);
+// 	printf("%zu\n", printf_nbr);
+
+// 	printf("%++i\n",-42);
+
+// 	return (0);
+// }

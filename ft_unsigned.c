@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_unsigned.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 12:54:48 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/05 16:25:01 by jtakahas         ###   ########.fr       */
+/*   Created: 2023/09/05 15:18:20 by jtakahas          #+#    #+#             */
+/*   Updated: 2023/09/05 15:53:21 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdlib.h>
+int	ft_print_uint(unsigned int nbr)
+{
+	int		length;
+	char	*num_str;
 
-int		ft_printf(const char *str, ...);
-int		ft_printstr(char *str);
-int		ft_printnbr(int nbr);
-char	*ft_itoa(int n);
-int		ft_printchar(int c);
-int		ft_print_ptr(unsigned long long ptr);
-int		ft_print_uint(unsigned int nbr);
-int		ft_print_hex(const char format, unsigned int nbr);
-
-#endif
+	length = 0;
+	if (nbr == 0)
+		length += write(1, "0", 1);
+	else
+	{
+		num_str = ft_uitoa(nbr);
+		length += ft_printstr(num_str);
+		free(num_str);
+	}
+	return (length);
+}

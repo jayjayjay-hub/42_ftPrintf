@@ -3,7 +3,10 @@ LIBFTNAME = libft.a
 LIBFTDIR = ./libft
 INCLUDE = include
 SRCS = ft_printf.c\
-		ft_output.c
+		ft_output.c\
+		ft_print_ptr.c\
+		ft_unsigned.c\
+		ft_print_hex.c
 OBJS = ${SRCS:.c=.o}
 LIBC = ar rcs
 CC = cc
