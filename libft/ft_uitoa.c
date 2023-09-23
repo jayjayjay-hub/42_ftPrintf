@@ -53,11 +53,11 @@ char	*ft_uitoa(unsigned int nbr)
 	len--;
 	if (number == 0)
 		str[0] = '0';
-	else if (number < 0)
+	/*else if (number < 0)
 	{
 		number *= -1;
 		str[0] = '-';
-	}
+	}*/
 	str = ft_to_char(str, number, len);
 	return (str);
 }
