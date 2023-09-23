@@ -58,7 +58,7 @@ int	ft_printf(const char *str, ...)
 
 // int	main(void)
 // {
-// 	char	a = 'a';
+// 	char	a = 'ab';
 // 	char	b = 'b';
 // 	char	*str = "cde";
 // 	unsigned int	u_nbr = 2077918407;
