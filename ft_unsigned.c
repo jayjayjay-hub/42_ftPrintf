@@ -6,7 +6,7 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:18:20 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/05 15:53:21 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/28 20:33:31 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,12 @@
 
 int	ft_print_uint(unsigned int nbr)
 {
-	int		length;
-	char	*num_str;
+	int		len_nbr;
+	char	*str_nbr;
 
-	length = 0;
-	if (nbr == 0)
-		length += write(1, "0", 1);
-	else
-	{
-		num_str = ft_uitoa(nbr);
-		length += ft_printstr(num_str);
-		free(num_str);
-	}
-	return (length);
+	len_nbr = 0;
+	str_nbr = ft_uitoa(nbr);
+	len_nbr += ft_printstr(str_nbr);
+	free(str_nbr);
+	return (len_nbr);
 }
