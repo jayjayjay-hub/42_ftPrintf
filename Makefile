@@ -32,6 +32,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
-# make all -C ${LIBFTDIR}
-# cp ${LIBFTDIR}/${LIBFTNAME} ${NAME}

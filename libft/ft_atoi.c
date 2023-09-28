@@ -6,7 +6,7 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 11:11:43 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/08/27 12:10:44 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/28 13:19:54 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int	ft_atoi(const char *str)
 {
 	int	sign;
 
+	if (!str)
+		return (0);
 	sign = 1;
 	while (*str == 32 || (*str >= 9 && *str <= 13))
 		str++;
