@@ -6,14 +6,14 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 12:54:28 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/05 17:15:48 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/28 16:44:59 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-int	format_check(va_list list, const char str_index)
+static int	format_check(va_list list, const char str_index)
 {
 	size_t	length;
 
@@ -38,22 +38,22 @@ int	format_check(va_list list, const char str_index)
 int	ft_printf(const char *str, ...)
 {
 	va_list	list;
-	size_t	length;
+	size_t	length_sum;
 	size_t	index;
 
 	va_start(list, str);
-	length = 0;
+	length_sum = 0;
 	index = 0;
 	while (str[index])
 	{
 		if (str[index] == '%')
-			length += format_check(list, str[index++ + 1]);
+			length_sum += format_check(list, str[index++ + 1]);
 		else
-			length += ft_printchar(str[index]);
+			length_sum += ft_printchar(str[index]);
 		index++;
 	}
 	va_end(list);
-	return ((int)length);
+	return ((int)length_sum);
 }
 
 // int	main(void)
