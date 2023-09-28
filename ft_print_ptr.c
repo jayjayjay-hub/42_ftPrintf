@@ -6,14 +6,14 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:17:34 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/28 20:32:06 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/28 21:18:25 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-static int	ft_lenptr(uintptr_t address_nbr)
+static int	ft_len_ptr(uintptr_t address_nbr)
 {
 	int	len;
 
@@ -52,8 +52,8 @@ int	ft_print_ptr(unsigned long long ptr)
 		length += (int)write(1, "0", 1);
 	else
 	{
-		ft_to_hex(ptr);
-		length += ft_lenptr(ptr);
+		ft_to_hex((uintptr_t)ptr);
+		length += ft_len_ptr((uintptr_t)ptr);
 	}
 	return (length);
 }

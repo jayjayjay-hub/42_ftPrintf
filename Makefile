@@ -5,7 +5,6 @@ INCLUDE = include
 SRCS = ft_printf.c\
 		ft_output.c\
 		ft_print_ptr.c\
-		ft_unsigned.c\
 		ft_print_hex.c\
 		ft_uitoa.c
 OBJS = ${SRCS:.c=.o}
