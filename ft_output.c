@@ -6,7 +6,7 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:24:18 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/05 16:35:33 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/28 17:58:44 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,18 @@ int	ft_printstr(char *str)
 	}
 	else
 	{
-		while (str[index])
-			write(1, &str[index++], 1);
+		write(1, &*str, ft_strlen(str));
 		return ((int)ft_strlen(str));
 	}
 }
 
 int	ft_printnbr(int nbr)
 {
-	int		len_nbr;
-	char	*num;
+	char	*str_nbr;
+	int		len;
 
-	num = ft_itoa(nbr);
-	len_nbr = ft_printstr(num);
-	free(num);
-	return (len_nbr);
+	str_nbr = ft_itoa(nbr);
+	len = ft_printstr(str_nbr);
+	free(str_nbr);
+	return (len);
 }
