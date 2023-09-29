@@ -6,20 +6,15 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 20:13:09 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/05 15:29:39 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/29 12:34:51 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <fcntl.h>
-# include <string.h>
-# include <limits.h>
-# include <stdbool.h>
 
 typedef struct s_list
 {

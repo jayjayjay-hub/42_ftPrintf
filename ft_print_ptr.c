@@ -6,7 +6,7 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:17:34 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/28 21:18:25 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/29 12:30:59 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ static void	ft_to_hex(uintptr_t address_nbr)
 	}
 	else
 	{
-		if (address_nbr <= 9)
-			ft_putchar_fd((address_nbr + '0'), 1);
+		if (address_nbr < 10)
+			ft_printchar(address_nbr + '0');
 		else
-			ft_putchar_fd((address_nbr - 10 + 'a'), 1);
+			ft_printchar(address_nbr - 10 + 'a');
 	}
 }
 
@@ -47,9 +47,9 @@ int	ft_print_ptr(unsigned long long ptr)
 	int	length;
 
 	length = 0;
-	length += (int)write(1, "0x", 2);
+	length += ft_printstr("0x");
 	if (!ptr)
-		length += (int)write(1, "0", 1);
+		length += ft_printchar('0');
 	else
 	{
 		ft_to_hex((uintptr_t)ptr);

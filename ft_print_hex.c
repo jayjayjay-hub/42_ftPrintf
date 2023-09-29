@@ -6,7 +6,7 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:59:07 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/28 21:15:08 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/29 12:14:45 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 
 static int	ft_len_hex(unsigned int nbr)
 {
-	int	len;
+	int	len_nbr;
 
-	len = 0;
+	len_nbr = 0;
 	while (nbr)
 	{
-		len++;
+		len_nbr++;
 		nbr /= 16;
 	}
-	return (len);
+	return (len_nbr);
 }
 
 static void	ft_to_hex(const char format, unsigned int nbr)
@@ -50,7 +50,7 @@ static void	ft_to_hex(const char format, unsigned int nbr)
 int	ft_print_hex(const char format, unsigned int nbr)
 {
 	if (nbr == 0)
-		return ((int)write(1, "0", 1));
+		return (ft_printchar('0'));
 	ft_to_hex(format, nbr);
 	return (ft_len_hex(nbr));
 }

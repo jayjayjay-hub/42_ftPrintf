@@ -6,7 +6,7 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:27:38 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/28 17:04:31 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/29 12:14:01 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ static char	*ft_to_char(char *str, unsigned long number, int len)
 {
 	while (number > 0)
 	{
-		str[len] = 48 + (number % 10);
+		str[len] = (number % 10) + '0';
 		number /= 10;
 		len--;
 	}
 	return (str);
 }
 
-static int	ft_numlen(unsigned int n)
+static int	ft_nbrlen(unsigned int n)
 {
 	int	len;
 
@@ -42,18 +42,18 @@ static int	ft_numlen(unsigned int n)
 char	*ft_uitoa(unsigned int nbr)
 {
 	char			*str;
-	int				len;
+	int				len_nbr;
 	unsigned long	number;
 
-	len = ft_numlen(nbr);
-	str = (char *)malloc((len + 1));
+	len_nbr = ft_nbrlen(nbr);
+	str = (char *)malloc((len_nbr + 1));
 	number = nbr;
 	if (!(str))
 		return (NULL);
-	str[len] = '\0';
-	len--;
+	str[len_nbr] = '\0';
+	len_nbr--;
 	if (number == 0)
 		str[0] = '0';
-	str = ft_to_char(str, number, len);
+	str = ft_to_char(str, number, len_nbr);
 	return (str);
 }

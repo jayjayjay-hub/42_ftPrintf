@@ -6,17 +6,14 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 12:54:48 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/28 21:12:39 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/29 12:34:08 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <unistd.h>
 # include <stdarg.h>
-# include <stdlib.h>
-# include <stdint.h>
 
 int		ft_printf(const char *str, ...);
 int		ft_printstr(char *str);

@@ -6,7 +6,7 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 12:54:28 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/28 16:44:59 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/29 12:31:04 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ static int	format_check(va_list list, const char str_index)
 		length += ft_printchar(va_arg(list, int));
 	else if (str_index == 's')
 		length += ft_printstr(va_arg(list, char *));
-	else if (str_index == 'd' || str_index == 'i')
-		length += ft_printnbr(va_arg(list, int));
 	else if (str_index == 'p')
 		length += ft_print_ptr(va_arg(list, unsigned long long));
+	else if (str_index == 'd' || str_index == 'i')
+		length += ft_printnbr(va_arg(list, int));
 	else if (str_index == 'u')
 		length += ft_print_uint(va_arg(list, unsigned int));
 	else if (str_index == 'x' || str_index == 'X')
@@ -47,7 +47,10 @@ int	ft_printf(const char *str, ...)
 	while (str[index])
 	{
 		if (str[index] == '%')
-			length_sum += format_check(list, str[index++ + 1]);
+		{
+			length_sum += format_check(list, str[index + 1]);
+			index++;
+		}
 		else
 			length_sum += ft_printchar(str[index]);
 		index++;
@@ -56,25 +59,36 @@ int	ft_printf(const char *str, ...)
 	return ((int)length_sum);
 }
 
+// __attribute__((destructor))
+// static void destructor() {
+//     system("leaks -q a.out");
+// }
+
 // int	main(void)
 // {
-// 	char	a = 'ab';
-// 	char	b = 'b';
-// 	char	*str = "cde";
-// 	unsigned int	u_nbr = 2077918407;
-// 	size_t	printf_nbr;
-// 	size_t	ft_printf_nbr;
+// 	int	test1;
+// 	int	test2;
+// 	int	test3;
+// 	int	test4;
+// 	int	test5;
+// 	int	test6;
+// 	int	test7;
+// 	int	test8;
+// 	int	test9;
+// 	int	test10;
 
-// 	ft_printf_nbr = ft_printf("%c %c %s %% %d\nptr = %p\n", a, b, str, 42, str);
-// 	printf_nbr = printf("%c %c %s %% %d\nptr = %p\n", a, b, str, 42, str);
-
-// 	printf("unsigned int %u\n", u_nbr);
-// 	ft_printf("ft unsint %u\n", u_nbr);
-
-// 	printf("%zu\n", ft_printf_nbr);
-// 	printf("%zu\n", printf_nbr);
-
-// 	printf("%++i\n",-42);
+// 	ft_printf("ft_printf:\n");
+// 	test1 = ft_printf("Hello World!\n");
+// 	test2 = ft_printf("Hello %s!\n", "World");
+// 	test3 = ft_printf("Hello %d!\n", 42);
+// 	test4 = ft_printf("Hello %p!\n", &test1);
+// 	test5 = ft_printf("Hello %x!\n", 42);
+// 	test6 = ft_printf("Hello %X!\n", 42);
+// 	test7 = ft_printf("Hello %c!\n", 'c');
+// 	test8 = ft_printf("Hello %%!\n");
+// 	test9 = ft_printf("Hello %u!\n", 42);
+// 	test10 = ft_printf("null -> %s\n", NULL);
+// 	ft_printf("\nprintf:\n");
 
 // 	return (0);
 // }
