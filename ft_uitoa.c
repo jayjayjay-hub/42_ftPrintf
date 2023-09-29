@@ -6,12 +6,12 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:27:38 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/29 12:14:01 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/29 18:39:15 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
+#include "libft.h"
 
 static char	*ft_to_char(char *str, unsigned long number, int len)
 {

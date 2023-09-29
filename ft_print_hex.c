@@ -6,12 +6,12 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:59:07 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/29 12:14:45 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/29 18:39:09 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
+#include "libft.h"
 
 static int	ft_len_hex(unsigned int nbr)
 {

@@ -6,16 +6,11 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 13:53:17 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/08/26 13:53:29 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/09/29 18:34:28 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// void	ft_putnbr_fd(int n, int fd)
-// {
-// 	ft_putstr_fd(ft_itoa(n), fd);
-// }
 
 void	ft_putnbr_fd(int n, int fd)
 {
