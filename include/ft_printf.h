@@ -6,12 +6,14 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 12:54:48 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/10/02 19:35:43 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/10/02 19:42:22 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+
+# define LEN_NULL_STR 6
 
 # include <stdarg.h>
 

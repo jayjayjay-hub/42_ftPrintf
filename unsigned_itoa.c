@@ -6,15 +6,19 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:27:38 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/10/02 19:29:40 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/10/02 19:57:56 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-static char	*ft_to_char(char *str, unsigned long number, int len)
+static char	*ft_to_char(char *str, unsigned int number, int len)
 {
+	str[len] = '\0';
+	len--;
+	if (number == 0)
+		str[0] = '0';
 	while (number > 0)
 	{
 		str[len] = (number % 10) + '0';
@@ -24,17 +28,17 @@ static char	*ft_to_char(char *str, unsigned long number, int len)
 	return (str);
 }
 
-static int	ft_nbrlen(unsigned int n)
+static int	ft_nbrlen(unsigned int nbr)
 {
 	int	len;
 
 	len = 0;
-	if (n <= 0)
+	if (nbr == 0)
 		len = 1;
-	while (n != 0)
+	while (nbr)
 	{
 		len++;
-		n /= 10;
+		nbr /= 10;
 	}
 	return (len);
 }
@@ -43,17 +47,11 @@ char	*unsigned_itoa(unsigned int nbr)
 {
 	char			*str;
 	int				len_nbr;
-	unsigned long	number;
 
 	len_nbr = ft_nbrlen(nbr);
 	str = (char *)malloc((len_nbr + 1));
-	number = nbr;
 	if (!(str))
 		return (NULL);
-	str[len_nbr] = '\0';
-	len_nbr--;
-	if (number == 0)
-		str[0] = '0';
-	str = ft_to_char(str, number, len_nbr);
+	str = ft_to_char(str, nbr, len_nbr);
 	return (str);
 }

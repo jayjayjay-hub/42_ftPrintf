@@ -6,7 +6,7 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:24:18 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/10/02 19:35:43 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/10/02 19:52:42 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	print_str(char *str)
 	if (!str)
 	{
 		print_str("(null)");
-		return (6);
+		return (LEN_NULL_STR);
 	}
 	else
 	{
