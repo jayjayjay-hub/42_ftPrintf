@@ -6,7 +6,7 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 12:54:28 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/29 12:31:04 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/10/02 19:35:43 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ static int	format_check(va_list list, const char str_index)
 
 	length = 0;
 	if (str_index == 'c')
-		length += ft_printchar(va_arg(list, int));
+		length += print_char(va_arg(list, int));
 	else if (str_index == 's')
-		length += ft_printstr(va_arg(list, char *));
+		length += print_str(va_arg(list, char *));
 	else if (str_index == 'p')
-		length += ft_print_ptr(va_arg(list, unsigned long long));
+		length += print_ptr(va_arg(list, unsigned long long));
 	else if (str_index == 'd' || str_index == 'i')
-		length += ft_printnbr(va_arg(list, int));
+		length += print_nbr(va_arg(list, int));
 	else if (str_index == 'u')
-		length += ft_print_uint(va_arg(list, unsigned int));
+		length += print_uint(va_arg(list, unsigned int));
 	else if (str_index == 'x' || str_index == 'X')
-		length += ft_print_hex(str_index, va_arg(list, unsigned int));
+		length += print_hex(str_index, va_arg(list, unsigned int));
 	else if (str_index == '%')
-		length += ft_printchar('%');
+		length += print_char('%');
 	return ((int)length);
 }
 
@@ -52,7 +52,7 @@ int	ft_printf(const char *str, ...)
 			index++;
 		}
 		else
-			length_sum += ft_printchar(str[index]);
+			length_sum += print_char(str[index]);
 		index++;
 	}
 	va_end(list);

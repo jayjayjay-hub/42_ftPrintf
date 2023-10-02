@@ -6,7 +6,7 @@
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 12:54:48 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/29 18:24:43 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/10/02 19:35:43 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 # include <stdarg.h>
 
 int		ft_printf(const char *str, ...);
-int		ft_printstr(char *str);
-int		ft_printnbr(int nbr);
-int		ft_printchar(int c);
-int		ft_print_ptr(unsigned long long ptr);
-int		ft_print_uint(unsigned int nbr);
-int		ft_print_hex(const char format, unsigned int nbr);
-char	*ft_uitoa(unsigned int nbr);
+int		print_str(char *str);
+int		print_nbr(int nbr);
+int		print_char(int c);
+int		print_ptr(unsigned long long ptr);
+int		print_uint(unsigned int nbr);
+int		print_hex(const char format, unsigned int nbr);
+char	*unsigned_itoa(unsigned int nbr);
 
 #endif

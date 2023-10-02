@@ -3,15 +3,14 @@ LIBFTNAME = libft.a
 LIBFTDIR = ./libft
 INCLUDE = include
 SRCS = ft_printf.c\
-		ft_output.c\
-		ft_print_ptr.c\
-		ft_print_hex.c\
-		ft_uitoa.c
+		output.c\
+		print_ptr.c\
+		print_hex.c\
+		unsigned_itoa.c
 OBJS = ${SRCS:.c=.o}
 LIBC = ar rcs
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I ${INCLUDE}
-RM = rm -f
 
 all: ${NAME}
 

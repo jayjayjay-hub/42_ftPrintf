@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hex.c                                     :+:      :+:    :+:   */
+/*   print_hex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:59:07 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/29 18:39:09 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/10/02 19:35:29 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,21 @@ static void	ft_to_hex(const char format, unsigned int nbr)
 	else
 	{
 		if (nbr < 10)
-			ft_printchar(nbr + '0');
+			print_char(nbr + '0');
 		else
 		{
 			if (format == 'x')
-				ft_printchar(nbr - 10 + 'a');
+				print_char(nbr - 10 + 'a');
 			if (format == 'X')
-				ft_printchar(nbr - 10 + 'A');
+				print_char(nbr - 10 + 'A');
 		}
 	}
 }
 
-int	ft_print_hex(const char format, unsigned int nbr)
+int	print_hex(const char format, unsigned int nbr)
 {
 	if (nbr == 0)
-		return (ft_printchar('0'));
+		return (print_char('0'));
 	ft_to_hex(format, nbr);
 	return (ft_len_hex(nbr));
 }

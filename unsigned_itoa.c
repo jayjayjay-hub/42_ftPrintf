@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uitoa.c                                         :+:      :+:    :+:   */
+/*   unsigned_itoa.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:27:38 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/29 18:39:15 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/10/02 19:29:40 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	ft_nbrlen(unsigned int n)
 	return (len);
 }
 
-char	*ft_uitoa(unsigned int nbr)
+char	*unsigned_itoa(unsigned int nbr)
 {
 	char			*str;
 	int				len_nbr;

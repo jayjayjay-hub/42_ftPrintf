@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
+/*   print_ptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtakahas <jtakahas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:17:34 by jtakahas          #+#    #+#             */
-/*   Updated: 2023/09/29 12:30:59 by jtakahas         ###   ########.fr       */
+/*   Updated: 2023/10/02 19:35:43 by jtakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,20 @@ static void	ft_to_hex(uintptr_t address_nbr)
 	else
 	{
 		if (address_nbr < 10)
-			ft_printchar(address_nbr + '0');
+			print_char(address_nbr + '0');
 		else
-			ft_printchar(address_nbr - 10 + 'a');
+			print_char(address_nbr - 10 + 'a');
 	}
 }
 
-int	ft_print_ptr(unsigned long long ptr)
+int	print_ptr(unsigned long long ptr)
 {
 	int	length;
 
 	length = 0;
-	length += ft_printstr("0x");
+	length += print_str("0x");
 	if (!ptr)
-		length += ft_printchar('0');
+		length += print_char('0');
 	else
 	{
 		ft_to_hex((uintptr_t)ptr);
